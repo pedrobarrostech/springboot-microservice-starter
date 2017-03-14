@@ -1,0 +1,8 @@
+description = 'user-service'
+
+dependencies {
+    compile project(':common')
+    compile("org.springframework.boot:spring-boot-starter-web")
+    compile("org.springframework.boot:spring-boot-starter-data-mongodb")
+    compile('com.github.fakemongo:fongo:2.0.4')
+}
