@@ -39,6 +39,8 @@ build
 
 */.classpath
 
+.vscode
+
 user-ui/node_modules
 user-ui/npm-debug.log
 user-ui/debug.log
