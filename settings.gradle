@@ -2,7 +2,9 @@ rootProject.name = 'springboot-microservice-starter'
 include ':common'
 include ':user-service'
 include ':user-composite-service'
+include ':user-rest'
 
 project(':common').projectDir = "$rootDir/common" as File
+project(':user-rest').projectDir = "$rootDir/user-rest" as File
 project(':user-service').projectDir = "$rootDir/microservices/core/user-service" as File
 project(':user-composite-service').projectDir = "$rootDir/microservices/aggregate/user-composite-service" as File

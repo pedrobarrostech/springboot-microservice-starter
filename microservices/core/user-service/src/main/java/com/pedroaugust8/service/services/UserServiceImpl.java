@@ -12,28 +12,31 @@ import com.pedroaugust8.common.interfaces.UserService;
 @Service
 public class UserServiceImpl implements UserService {
 	
-	private UserRepository UserRepository;
+	private UserRepository userRepository;
 	
 	@Autowired
-	public UserServiceImpl(UserRepository UserRepository) {
-		this.UserRepository = UserRepository;
+	public UserServiceImpl(UserRepository userRepository) {
+		this.userRepository = userRepository;
 	}
 	
+	@Override
     public List<User> list() {
-        List<User> UserList = UserRepository.list();
-		return UserList; 
+		return userRepository.list();
     }
 
+	@Override
     public User get(String id) {
-        return UserRepository.get(id);
+        return userRepository.get(id);
     }
 
+	@Override
     public void save(User user) {
-        UserRepository.save(user);
+        userRepository.save(user);
     }
 
+	@Override
     public void delete(String id) {
-        UserRepository.delete(id);
+        userRepository.delete(id);
     }
 
 }
