@@ -6,7 +6,7 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class UserService {
-  private url = 'http://localhost:8080/users'; 
+  private url = 'http://localhost:9090/users'; 
   //private token = 'Bearer ' + JSON.parse(localStorage.getItem('currentUser')).token;
   private headers = new Headers({
       'Accept': ' application/json',

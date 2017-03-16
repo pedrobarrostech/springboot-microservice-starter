@@ -9,11 +9,9 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 
-import com.pedroaugust8.common.models.ErrorResponse;
 import com.pedroaugust8.common.models.User;
 import com.pedroaugust8.common.exceptions.UserException;
 import com.pedroaugust8.common.interfaces.UserService;

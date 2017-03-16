@@ -17,7 +17,7 @@ public class UserServiceConfiguration {
 	private String path;
 	
 	@Bean
-	public UserService getAccountMicroservice() {
+	public UserService getUserService() {
 		return Feign.builder()
 				.encoder(new JacksonEncoder())
 				.decoder(new JacksonDecoder())

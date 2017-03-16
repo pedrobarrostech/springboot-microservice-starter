@@ -21,6 +21,7 @@ public class UserResourceTest {
 	private UserService service;
 	private List<User> actualList;
 
+	@SuppressWarnings("unchecked")
 	@Before
 	public void setup(){
 		mockList = mock(List.class);
@@ -55,7 +56,6 @@ public class UserResourceTest {
 		try {
 			target.delete("1");
 		} catch (UserException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		verify(service).delete("1");	
