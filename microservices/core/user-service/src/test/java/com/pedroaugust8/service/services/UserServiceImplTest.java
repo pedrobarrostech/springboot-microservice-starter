@@ -1,4 +1,4 @@
-package com.pedroaugust8.service.resources;
+package com.pedroaugust8.service.services;
 
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
@@ -11,50 +11,48 @@ import org.junit.Before;
 import org.junit.Test;
 
 import com.pedroaugust8.common.models.User;
-import com.pedroaugust8.service.resources.UserResource;
-import com.pedroaugust8.common.interfaces.UserService;
 import com.pedroaugust8.common.exceptions.UserException;
+import com.pedroaugust8.common.interfaces.UserRepository;
 
-public class UserResourceTest {
-	private UserResource target;
+public class UserServiceImplTest {
+	private UserServiceImpl target;
 	private List<User> mockList;
-	private UserService service;
+	private UserRepository repository;
 	private List<User> actualList;
 
 	@SuppressWarnings("unchecked")
 	@Before
 	public void setup(){
 		mockList = mock(List.class);
-		service = mock(UserService.class);
+		repository = mock(UserRepository.class);
 		
-		when(service.list()).thenReturn(mockList);
-		target = new UserResource(service);
+		when(repository.list()).thenReturn(mockList);
+		target = new UserServiceImpl(repository);
 	}
 	
 	@Test
 	public void save() throws UserException{
 		User User = new User();	
-		target.create(User);	
-		verify(service).save(User);
+		target.save(User);	
+		verify(repository).save(User);
 	}
 	
 	@Test
 	public void list(){
-		actualList = target.getUsers();
+		actualList = target.list();
 		Assert.assertEquals(mockList, actualList);
 	}
-	
 	
 	@Test
 	public void delete() throws UserException{	
 		target.delete("1");
-		verify(service).delete("1");	
+		verify(repository).delete("1");	
 	} 
 	
 	@Test
 	public void get() {	
 		target.get("1");
-		verify(service).get("1");	
+		verify(repository).get("1");	
 	} 
 	
 	
